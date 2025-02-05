@@ -15,7 +15,6 @@ const courseSchema = new mongoose.Schema({
   updatedAt: { type: Date, default: Date.now }
 });
 
-// Add compound index for optimized searches
 courseSchema.index({ instituteName: 1, courseStream: 1, level: 1 });
 
 module.exports = mongoose.model('Course', courseSchema);

@@ -12,7 +12,6 @@ const courseController = {
         });
       }
 
-      // Validate each course object
       const validationErrors = [];
       courses.forEach((course, index) => {
         if (!course.instituteName || !course.courseName || !course.fee) {
@@ -28,7 +27,6 @@ const courseController = {
         });
       }
 
-      // Insert courses
       const insertedCourses = await Course.insertMany(courses);
 
       res.status(201).json({
@@ -47,7 +45,6 @@ const courseController = {
   }
   ,
 
-  // Get courses with filters
   getCourses: async (req, res) => {
     try {
       const { query, state, city, stream, level, maxFee, page = 1, limit = 10 } = req.query;
